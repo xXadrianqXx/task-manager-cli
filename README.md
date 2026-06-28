@@ -1,6 +1,7 @@
 # 📋 Task Manager CLI
 
-> Una aplicación de terminal para gestionar tareas, practicar lógica de programación y aprender Kotlin.
+> Una aplicación de gestión de tareas desarrollada en Kotlin para la terminal.  
+> Perfecta para practicar lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
 
 ---
 
@@ -20,6 +21,9 @@
 
 - **Kotlin** - Lenguaje principal
 - **Terminal** - Interfaz de usuario
+- **Termux** - Entorno de desarrollo (Android)
+- **Git** - Control de versiones
+
 
 ---
 
@@ -38,4 +42,111 @@ kotlinc Task.kt -runtime-include -d Task.jar
 # 4. Ejecuta
 kotlin Task.jar
 ```
-**Nota:** Se debe tener instalado Java y Kotlin previamente.
+**Requisito:** Tener instalado Java y Kotlin.
+
+---
+
+🎯 Uso
+
+Al ejecutar la app, verás un menú principal como este:
+
+```bash
+📋 GESTOR DE TAREAS
+1. ➕ Agregar tarea
+2. 📋 Listar tareas
+3. 🔍 Buscar tarea
+4. ✅ Marcar completada
+5. ✏️ Editar tarea
+6. 🗑️ Eliminar tarea
+7. 💾 Guardar tareas
+8. 🚪 Salir
+```
+
+Selecciona una opción escribiendo el número correspondiente y sigue las instrucciones en pantalla.
+
+---
+
+📁 Estructura del proyecto
+
+```
+task-manager-cli/
+├── Task.kt               # Código fuente principal
+├── tareas.json           # Archivo de datos (se genera automáticamente)
+├── README.md             # Este archivo
+└── .gitignore            # Archivos ignorados por Git
+```
+
+---
+
+📝 Ejemplo de uso
+
+```bash
+# Agregar una tarea
+➜ Ingrese el título de la tarea: Aprender Kotlin
+✅ Tarea agregada con ID: 1
+
+# Listar tareas
+➜ [⬜] 1. Aprender Kotlin [PRIORIDAD: Alta]
+
+# Buscar por nombre
+➜ Ingrese el nombre a buscar: Kotlin
+✅ Tarea encontrada: 1. Aprender Kotlin [PRIORIDAD: Alta]
+
+# Marcar como completada
+➜ Ingrese el ID de la tarea a completar: 1
+✅ Tarea marcada como completada
+
+# Listar nuevamente
+➜ [✅] 1. Aprender Kotlin [PRIORIDAD: Alta]
+```
+
+---
+
+🧠 ¿Qué aprendí haciendo este proyecto?
+
+· Manejo de colecciones en Kotlin (list, filter, map, sortedBy)
+· Persistencia de datos con JSON
+· Entrada y salida por consola
+· Control de flujo con when y bucles
+· Organización de código en funciones
+· Uso de Git y GitHub para control de versiones
+· Creación de ejecutables .jar para distribución
+
+---
+
+🤝 Contribuciones
+
+Este es un proyecto personal para practicar Kotlin.
+Si tienes sugerencias, mejoras o encuentras algún error, ¡son bienvenidas!
+Puedes abrir un Issue o un Pull Request.
+
+---
+
+📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+Puedes usarlo, modificarlo y distribuirlo libremente.
+
+---
+
+👨‍💻 Autor
+
+Adrian
+
+· GitHub: @xXadrianqXx
+· Proyecto creado para practicar lógica de programación y Kotlin.
+
+---
+
+🌟 ¿Te gustó el proyecto?
+
+Si te fue útil, ¡dale una ⭐ al repositorio!
+Me ayuda a seguir mejorando y compartiendo mis proyectos.
+
+---
+
+Nota: Este proyecto fue desarrollado y probado en Termux (Android), pero funciona en cualquier sistema con Java/Kotlin instalado.
+
+```
+
+---
