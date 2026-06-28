@@ -149,4 +149,3 @@ Nota: Este proyecto fue desarrollado y probado en Termux (Android), pero funcion
 
 ```
 
----
