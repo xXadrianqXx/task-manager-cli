@@ -147,5 +147,4 @@ Me ayuda a seguir mejorando y compartiendo mis proyectos.
 
 Nota: Este proyecto fue desarrollado y probado en Termux (Android), pero funciona en cualquier sistema con Java/Kotlin instalado.
 
-```
 
