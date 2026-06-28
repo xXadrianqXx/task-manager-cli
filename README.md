@@ -38,4 +38,4 @@ kotlinc Task.kt -runtime-include -d Task.jar
 # 4. Ejecuta
 kotlin Task.jar
 ```
-**Nota:** Se debe tener instalado Java y Kotlin previamente
+**Nota:** Se debe tener instalado Java y Kotlin previamente.
