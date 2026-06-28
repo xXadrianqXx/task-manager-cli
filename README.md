@@ -27,10 +27,15 @@
 
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/tu-usuario/task-manager-cli.git
+https://github.com/xXadrianqXx/task-manager-cli
 
 # 2. Entra al directorio
 cd task-manager-cli
 
-# 3. Ejecuta la app
-kotlin Main.kt
+# 3. Compila el Script 
+kotlinc Task.kt -runtime-include -d Task.jar
+
+# 4. Ejecuta
+kotlin Task.jar
+```
+**Nota:** Se debe tener instalado Java y Kotlin previamente
