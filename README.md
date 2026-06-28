@@ -36,7 +36,7 @@ https://github.com/xXadrianqXx/task-manager-cli
 # 2. Entra al directorio
 cd task-manager-cli
 
-# 3. Compila el Script 
+# 3. Compila el Script(Solo la primera vez) 
 kotlinc Task.kt -runtime-include -d Task.jar
 
 # 4. Ejecuta
