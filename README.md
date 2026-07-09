@@ -102,7 +102,7 @@ task-manager-cli/
 
 ---
 
-🧠 ¿Qué aprendí haciendo este proyecto?
+¿Qué se práctico?
 
 · Manejo de colecciones en Kotlin (list, filter, map, sortedBy)
 · Persistencia de datos con JSON
@@ -114,7 +114,7 @@ task-manager-cli/
 
 ---
 
-🤝 Contribuciones
+Contribuciones
 
 Este es un proyecto personal para practicar Kotlin.
 Si tienes sugerencias, mejoras o encuentras algún error, ¡son bienvenidas!
@@ -138,9 +138,7 @@ Adrian
 
 ---
 
-🌟 ¿Te gustó el proyecto?
-
-Si te fue útil, ¡dale una ⭐ al repositorio!
+Si te fue útil, ¡dale una  al repositorio!
 Me ayuda a seguir mejorando y compartiendo mis proyectos.
 
 ---
