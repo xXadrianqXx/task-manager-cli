@@ -1,7 +1,7 @@
 # 📋 Task Manager CLI
 
 > Una aplicación de gestión de tareas desarrollada en Kotlin para la terminal.  
-> Perfecta para practicar lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
+> Practica lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
 
 ---
 
@@ -51,15 +51,15 @@ kotlin Task.jar
 Al ejecutar la app, verás un menú principal como este:
 
 ```bash
-📋 GESTOR DE TAREAS
-1. ➕ Agregar tarea
-2. 📋 Listar tareas
-3. 🔍 Buscar tarea
-4. ✅ Marcar completada
-5. ✏️ Editar tarea
-6. 🗑️ Eliminar tarea
-7. 💾 Guardar tareas
-8. 🚪 Salir
+  GESTOR DE TAREAS
+1.  Agregar tarea
+2.  Listar tareas
+3.  Buscar tarea
+4.  Marcar completada
+5.  Editar tarea
+6.  Eliminar tarea
+7.  Guardar tareas
+8.  Salir
 ```
 
 Selecciona una opción escribiendo el número correspondiente y sigue las instrucciones en pantalla.
@@ -71,7 +71,7 @@ Selecciona una opción escribiendo el número correspondiente y sigue las instru
 ```
 task-manager-cli/
 ├── Task.kt               # Código fuente principal
-├── tareas.json           # Archivo de datos (se genera automáticamente)
+├── tareas.json/.txt           # Archivo de datos (se genera automáticamente)
 ├── README.md             # Este archivo
 └── .gitignore            # Archivos ignorados por Git
 ```
@@ -138,8 +138,7 @@ Adrian
 
 ---
 
-Si te fue útil, ¡dale una  al repositorio!
-Me ayuda a seguir mejorando y compartiendo mis proyectos.
+Si te fue útil, ¡dale una ⭐ al repositorio!
 
 ---
 
