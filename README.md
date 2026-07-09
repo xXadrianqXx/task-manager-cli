@@ -1,7 +1,7 @@
 # 📋 Task Manager CLI
 
 > Una aplicación de gestión de tareas desarrollada en Kotlin para la terminal.  
-> Practica lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
+> Practica de lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
 
 ---
 
