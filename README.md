@@ -1,7 +1,7 @@
 # 📋 Task Manager CLI
 
 > Una aplicación de gestión de tareas desarrollada en Kotlin para la terminal.  
-> Practica de lógica de programación, manejo de archivos JSON y flujos de menú interactivo.
+> Practica de lógica de programación, manejo de archivos JSON y .txt y flujos de menú interactivo.
 
 ---
 
@@ -31,7 +31,7 @@
 
 ```bash
 # 1. Clona el repositorio
-https://github.com/xXadrianqXx/task-manager-cli
+git clone https://github.com/xXadrianqXx/task-manager-cli
 
 # 2. Entra al directorio
 cd task-manager-cli
@@ -43,6 +43,13 @@ kotlinc Task.kt -runtime-include -d Task.jar
 kotlin Task.jar
 ```
 **Requisito:** Tener instalado Java y Kotlin.
+---
+**Actualización**
+
+```
+#Tambien puede usar java -jar [ejecutableName]
+java -jar Tarea.jar
+```
 
 ---
 
