@@ -17,7 +17,7 @@ fun main(){
     println(loadTasks(listOfTasks))
     do{
         println("\n------------Menu-------------")
-        println("1. Agregar Tarea\n2. Listar Tareas\n3. Buscar Tarea\n4. Marcar Tarea Completa\n5. Editar Tarea \n6. Eliminar Tarea\n7.Salir\n")
+        println("1. Agregar Tarea\n2. Listar Tareas\n3. Buscar Tarea\n4. Marcar Tarea Completa \n5. Eliminar Tarea\n6. Salir\n")
         print("Digite su opcion: ")
         val input = readLine()?.toIntOrNull() ?: 0
         when (input){
@@ -25,11 +25,37 @@ fun main(){
             2 -> listTasks(listOfTasks)
             3 -> findTask(listOfTasks)
             4 -> chooseCompleteTask(listOfTasks)
-            7 -> onApp = false
+            5 -> removeTask(listOfTasks)
+            6 -> onApp = false
             else -> println("\nERROR: Digite el Literal/Numero de la opcion correspondiente\n")
         }
     } while(onApp)
 }
+
+
+fun updateFile(list:MutableList<Task>){
+    val file = File("tareas.txt")
+    val lines = list.joinToString("\n"){task ->"task.id}|${task.title}|${task.description}|${task.priority}|${task.state}" }
+    println(lines)
+    file.writeText(lines)
+}
+
+//Borra La Tarea
+fun removeTask(list: MutableList<Task>){
+    println("\nUNA VES REALIZADA LA OPERACION NO SE PODRA REHACER!")
+    println("\n====== Eliminar Tarea =======")
+    printTasks(sortedList(list,1))
+    print("\nDigite la ID de la Tarea que desea Eliminar: ")
+     val input = readLine()?.toIntOrNull() ?:0
+     val task = list.find{it.id == input}
+     if (task != null){
+        println("La Tarea se elimino con exito")
+        list.remove(task)
+        updateFile(list)
+         } else {println("\nERROR: ID Invalida\n")}                   
+
+}
+
 
 //Marcar Tarea Completa 
 fun chooseCompleteTask(list: MutableList<Task>){
@@ -41,6 +67,7 @@ fun chooseCompleteTask(list: MutableList<Task>){
 
     if (task != null) {
         task.state = true
+        updateFile(list)
          } else {println("\nERROR: ID Invalida\n")}
     
 }
