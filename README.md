@@ -10,10 +10,9 @@
 - ✅ Agregar tareas con título y prioridad
 - 📋 Listar tareas ordenadas por prioridad
 - 🔍 Buscar tareas por ID o nombre
-- ✏️ Editar tareas existentes (Incompleto)
-- ✅ Marcar tareas como completadas (Incompleto)
-- 🗑️ Eliminar tareas(Incompleto)
-- 💾 Guardar y cargar tareas en JSON(Incompleto)
+- ✅ Marcar tareas como completadas
+- 🗑️ Eliminar tareas
+- 💾 Guardar y cargar tareas en TXT
 
 ---
 
@@ -34,13 +33,13 @@
 git clone https://github.com/xXadrianqXx/task-manager-cli
 
 # 2. Entra al directorio
-cd task-manager-cli
+cd task-manager-cli/versiones_pasadas
 
 # 3. Compila el Script(Solo la primera vez) 
-kotlinc Task.kt -runtime-include -d Task.jar
+kotlinc TaskManagerScript.kt -runtime-include -d TaskManagerApp.jar
 
 # 4. Ejecuta
-kotlin Task.jar
+kotlin TaskManagerApp.jar
 ```
 **Requisito:** Tener instalado Java y Kotlin.
 ---
@@ -48,7 +47,7 @@ kotlin Task.jar
 
 ```
 #Tambien puede usar java -jar [ejecutableName]
-java -jar Tarea.jar
+java -jar TaskManagerApp.jar
 ```
 
 ---
@@ -58,15 +57,13 @@ java -jar Tarea.jar
 Al ejecutar la app, verás un menú principal como este:
 
 ```bash
-  GESTOR DE TAREAS
+  ======Menú=====
 1.  Agregar tarea
 2.  Listar tareas
 3.  Buscar tarea
 4.  Marcar completada
-5.  Editar tarea
-6.  Eliminar tarea
-7.  Guardar tareas
-8.  Salir
+5.  Eliminar tarea
+6.  Salir
 ```
 
 Selecciona una opción escribiendo el número correspondiente y sigue las instrucciones en pantalla.
@@ -77,8 +74,7 @@ Selecciona una opción escribiendo el número correspondiente y sigue las instru
 
 ```
 task-manager-cli/
-├── Task.kt               # Código fuente principal
-├── tareas.json/.txt           # Archivo de datos (se genera automáticamente)
+├── versiones_pasadas
 ├── README.md             # Este archivo
 └── .gitignore            # Archivos ignorados por Git
 ```
@@ -112,7 +108,7 @@ task-manager-cli/
 ¿Qué se práctico?
 
 · Manejo de colecciones en Kotlin (list, filter, map, sortedBy)
-· Persistencia de datos con JSON
+· Persistencia de datos con TXT
 · Entrada y salida por consola
 · Control de flujo con when y bucles
 · Organización de código en funciones
