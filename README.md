@@ -47,7 +47,7 @@ kotlin TaskManagerApp.jar
 
 ```
 #Tambien puede usar java -jar [ejecutableName]
-java -jar TaskManager.jar
+java -jar TaskManagerApp.jar
 ```
 
 ---
