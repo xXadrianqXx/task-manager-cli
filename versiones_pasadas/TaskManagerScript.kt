@@ -35,7 +35,7 @@ fun main(){
 
 fun updateFile(list:MutableList<Task>){
     val file = File("tareas.txt")
-    val lines = list.joinToString("\n"){task ->"task.id}|${task.title}|${task.description}|${task.priority}|${task.state}" }
+    val lines = list.joinToString("\n"){task ->"$task.id}|${task.title}|${task.description}|${task.priority}|${task.state}" }
     println(lines)
     file.writeText(lines)
 }
