@@ -4,17 +4,25 @@ import domain.Task
 
 class TaskRepository{
 
+    private var tasksLoaded: List<Task>
+
+    init{
+        tasksLoaded = loadTask()
+    }
+
 //Usa la funcion save() de Save.kt pero antes pasa por el mapper convirtiendo las clases en string. 
     fun saveTask(task: Task){
         save(toStringTask(task))
     }
+
+    fun getAllTasks(): List<Task> = tasksLoaded
+
+    fun getTasksById(): List<Task> = tasksLoaded.sortedBy{it.id}
     
-    fun loadRepository(){
-    // Recibimos la Lista Natural y esta manipularemos.
-        val tasks = loadTask()
-    }
+    fun getTasksByTitle(): List<Task> = tasksLoaded.sortedBy{it.title}
+    
 //Carga la lista tal y como esta en el archivo y los mete en una lista convertidos en Tareas
-    fun loadTask(): List<Task>{
+    private fun loadTask(): List<Task>{
         val tasks:MutableList<Task> = mutableListOf()
         //Si estaba vacio o no existia devuelve una lista vacia. 
         val lines = load()?.split("\n") ?: return emptyList()
