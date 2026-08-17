@@ -1,3 +1,6 @@
 package ui.viewmodel
 
-class TaskViewModel(private val data: )
+class TaskViewModel(private val data: TaskRepository) {
+
+    
+}
