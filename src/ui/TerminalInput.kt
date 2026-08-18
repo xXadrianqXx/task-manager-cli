@@ -16,6 +16,4 @@ class TerminalInput{
             print("\nDigite su opción: ")
         } while(true)
     }
-
-    //
 }

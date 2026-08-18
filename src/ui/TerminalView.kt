@@ -11,9 +11,21 @@ class TerminalView{
     
     private fun showMainMenu() {
         println("\n------------Menu-------------")
-        println("1. Agregar Tarea\n2. Listar Tareas\n3. Buscar Tarea\n4. Marcar Tarea Completa \n5. Eliminar Tarea\n6. Salir\n")
+        //println("1. Agregar Tarea\n2. Listar Tareas\n3. Buscar Tarea\n4. Marcar Tarea Completa \n5. Eliminar Tarea\n6. Salir\n")
+        println("""
+            |---------------------------|
+            |1. Agregar Tareas          |
+            |2. Listar Tareas           |
+            |3. Buscar Tareas           |
+            |4. Marcar Tarea Completa   |
+            |5. Eliminar Tareas         |
+            |6. Salir                   |
+            |___________________________|
+        """.trimIndent())
 
-        print("Digite su opcion: ")
+        println("\n")
+
+        print("\nDigite su opcion: ")
     }
     
 }
