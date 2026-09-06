@@ -1,9 +1,10 @@
-package ui
+package utils
 
-class TerminalInput{
+class Input{
 
     fun inputNumbers(): Int {
         do{
+            print("\nDigite su opción: ")
             try{
                 val input = readln()
                 if (!input.isNullOrBlank())return input.toInt()
@@ -13,7 +14,6 @@ class TerminalInput{
             } catch (e: Exception) {
                 println(e)
             }
-            print("\nDigite su opción: ")
         } while(true)
     }
 }
