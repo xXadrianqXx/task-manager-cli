@@ -11,8 +11,11 @@ fun AppNavigation(view: TerminalView, input: Input){
 
         if (action == null) {
             println("La opción digitada no existe.")
-        }else {onApp = action.invoke()}
-        
+        }else {
+            ProcessBuilder("clear").inheritIO().start().waitFor()
+            onApp = action.invoke()
+        }
+
     } while(onApp)
 }
 
