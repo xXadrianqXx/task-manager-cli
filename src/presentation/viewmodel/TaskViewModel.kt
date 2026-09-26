@@ -1,4 +1,4 @@
-package ui.viewmodel
+package presentation.viewmodel
 
 //class TaskViewModel(private val data: TaskRepository) {
 
