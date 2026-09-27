@@ -8,8 +8,14 @@ fun save(task: String){
     try{
         //Definimos la ruta de guardado (Solo creamos donde se podria guardar, aun ni se crea el archivo)
         val file = File("TareasGuardadas.txt")
-        //Guarda el parametro recibido
-        file.appendText(task)
+        //Si el archivo no existe se crea y se añade la tarea sin salto de linea.
+        if (!file.exists()){
+            //Guarda el parametro recibido
+            file.appendText(task)
+        } else {
+            // Sino salta de linea a agrega la tarea.
+            file.appendText("\n" + task)
+        }
         println("La Tarea se Guardo Exitosamente!!")
     } catch(e:IOException){
     //Si es un problema de permisos o algo no da el error exacto.

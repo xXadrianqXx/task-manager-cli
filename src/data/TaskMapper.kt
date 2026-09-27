@@ -5,7 +5,7 @@ import domain.Task
 
 //Funcion para convertir en Texto la Tarea
 fun toStringTask(it: Task):String {
-    val taskString =  "${it.id}|${it.title}|${it.description}|${it.priority}|${it.state}"
+    val taskString =  "${it.id}|${it.title}|${it.description}|${it.priority}|${it.state}" 
     
     return taskString
 }

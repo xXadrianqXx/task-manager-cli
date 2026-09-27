@@ -10,10 +10,13 @@ import presentation.viewmodel.TaskViewModel
 
 
 fun main() {
+    //Limpia la pantalla al iniciar el app.
+    ProcessBuilder("clear").inheritIO().start().waitFor()
     //Repositorio
     val dataTasks = TaskRepository()
     val input = Input()
 
+    //Moldes para imprimir Tareas
     val parse = ParserPrint()
 
     //Cuandon se trate de editar o agreagar Tareas, esto lo controlara viewModel.
