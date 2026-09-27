@@ -16,4 +16,19 @@ class Input{
             }
         } while(true)
     }
+
+    fun inputNotBlankOrNull(promt:String): String {
+        while(true){
+            println(promt)//Imprime el mensaje recibito por parametro
+            val input = readln() //Lee
+            //Verifica que input no este vacio.
+            if (!input.isNullOrBlank()){ 
+                return input //Si no esta vacio retorna el input
+            } else {
+            // Sino imprime Error y continue el bucle
+                println("Error: No puede estar en blanco, intente de nuevo")
+            }
+        }
+    }
 }
+
