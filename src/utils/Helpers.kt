@@ -1,5 +1,8 @@
 package utils
 
+import domain.Priority
+import domain.Task
+
 class Input{
 
     fun inputNumbers(): Int {
@@ -32,3 +35,34 @@ class Input{
     }
 }
 
+class ParserPrint{
+    //Imprime la Lista correspondiente
+    fun printTasks(list:List<Task>){
+
+        if (list.isEmpty()) {
+            if (list.isEmpty()) {
+                    println("\n╔========╗")
+                    println("║${" ".repeat(18)}📋 LISTA VACÍA${" ".repeat(18)}║")
+                    println("╚========╝")
+                    return
+                }
+        }
+
+        list.forEachIndexed {index, task ->
+            val state = if (task.state) "✔ Completa" else "✘ Incompleta"
+            val prioridad = when (task.priority) {
+                        Priority.ALTA  -> "Alta"
+                        Priority.MEDIA -> "Media"
+                        Priority.BAJA  -> "Baja"
+                    }
+            println("\n┌─────────────────────────────────────────────────┐")
+            println("│ Tarea N°${index + 1} (ID: ${task.id})")
+            println("├─────────────────────────────────────────────────┤")
+            println("│ Título:      ${task.title}")
+            println("│ Descripción: ${task.description}")
+            println("│ Prioridad:   $prioridad")
+            println("│ Estado:      $state")
+            println("└─────────────────────────────────────────────────┘")
+        }
+    }
+}

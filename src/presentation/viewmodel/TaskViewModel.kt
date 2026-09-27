@@ -1,6 +1,7 @@
 package presentation.viewmodel
 
 import utils.Input
+import utils.ParserPrint
 import data.TaskRepository
 import domain.Priority
 import domain.Task
@@ -8,7 +9,8 @@ import domain.Task
 
 class TaskViewModel(
     private val dataTask: TaskRepository,
-    private val input: Input
+    private val input: Input,
+    private val parser: ParserPrint
     ) {
 
     //Añadir Tareas
@@ -36,11 +38,13 @@ class TaskViewModel(
         val id = (dataTask.getAllTasks().maxOfOrNull { it.id } ?: 0) + 1
         val newTask = Task(id,title,description,priority,false)
         dataTask.saveTask(newTask)
+
+        dataTask.updateList()
     
     }
 
     fun showList(){
-        println("Listas")
+        parser.printTasks(dataTask.getAllTasks())
     }
 
 }

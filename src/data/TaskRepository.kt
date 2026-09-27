@@ -42,5 +42,9 @@ class TaskRepository{
     //Retorna la lista de datos cargada.
         return tasks.toList()
     }
+
+    fun updateList() {
+        tasksLoaded = loadTask()
+    }
     
 }
