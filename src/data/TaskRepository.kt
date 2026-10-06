@@ -14,6 +14,14 @@ class TaskRepository{
     fun saveTask(task: Task){
         save(toStringTask(task))
     }
+//Usa el principio de una actulización.
+    fun updateTask(listUpdated: List<Task>){
+        deleteFile()
+
+        for (i in listUpdated){
+            save(toStringTask(i))
+        }
+    }
 
     fun getAllTasks(): List<Task> = tasksLoaded
 
