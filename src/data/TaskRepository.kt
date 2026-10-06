@@ -19,8 +19,9 @@ class TaskRepository{
         deleteFile()
 
         for (i in listUpdated){
-            save(toStringTask(i))
+            save(toStringTask(i), "update")
         }
+        
     }
 
     fun getAllTasks(): List<Task> = tasksLoaded
@@ -51,8 +52,9 @@ class TaskRepository{
         return tasks.toList()
     }
 
-    fun updateList() {
+    fun updateList(){
         tasksLoaded = loadTask()
     }
+
     
 }

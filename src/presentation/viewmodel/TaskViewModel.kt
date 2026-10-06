@@ -40,7 +40,6 @@ class TaskViewModel(
         dataTask.saveTask(newTask)
 
         dataTask.updateList()
-    
     }
 
     fun showList(){
@@ -67,6 +66,11 @@ class TaskViewModel(
         newList[i] = newList[i].copy(state = true)
 
         dataTask.updateTask(newList.toList())
+
+        print("\nLa Tarea $i se actualizo con exito! Presione enter para Volver al Menú Principal: ")
+        val n = readln()
+
+        dataTask.updateList()
     }
 
 }

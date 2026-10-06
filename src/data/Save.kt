@@ -3,7 +3,8 @@ package data
 import java.io.File
 import java.io.IOException
 
-fun save(task: String){
+//El parametro action es oar determinar si se esta actualizando todo el archivo o solo se esta agregando 1 nuevo.
+fun save(task: String, action: String? = null){
 //try para que evite errores como por ejemplo que ya no hay espacio, o no tiene permisos para guardar
     try{
         //Definimos la ruta de guardado (Solo creamos donde se podria guardar, aun ni se crea el archivo)
@@ -16,7 +17,7 @@ fun save(task: String){
             // Sino salta de linea a agrega la tarea.
             file.appendText("\n" + task)
         }
-        println("La Tarea se Guardo Exitosamente!!")
+        if (action == null) println("La Tarea se Guardo Exitosamente!!")
     } catch(e:IOException){
     //Si es un problema de permisos o algo no da el error exacto.
         println("Error al Guardar: ${e.message}")
