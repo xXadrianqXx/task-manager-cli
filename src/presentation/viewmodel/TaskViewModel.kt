@@ -47,6 +47,7 @@ class TaskViewModel(
     }
 
     fun updateTask(){
+
     //Imprimimos instrucción
         print("Digite la ID de la Tarea: ")
         //Pedimos id de la trea a marcar
@@ -58,24 +59,28 @@ class TaskViewModel(
             println("Error: La ID digitada no coincide con ninguna Tarea.")
             print("\nPresione Enter para volver al Menú Principal: ")
             val n = readln()
+            ProcessBuilder("clear").inheritIO().start().waitFor()
             return
         }
 //Si existe obtenemos la pos en que se encuentra.
         val i = newList.indexOfFirst{it.id == id}
-    //Si la lista ya esta actualizada salir.
+    //Si la lista ya esta actualizada, salir.
         if (newList[i].state == true){
             println("La Tarea ya esta completada.")
             print("\nPresione Enter para volver al Menú Principal: ")
             val n = readln()
+            ProcessBuilder("clear").inheritIO().start().waitFor()
             return
         }
         //Copiamos,editamos y agregamos la tarea actualizada.
         newList[i] = newList[i].copy(state = true)
-
+//Enviamos la nueva lista al repositorio.
         dataTask.updateTask(newList.toList())
 
-        print("\nLa Tarea $id se actualizo con exito! Presione enter para Volver al Menú Principal: ")
+        print("\nLa Tarea $id se actualizo con exito! \nPresione enter para Volver al Menú Principal: ")
         val n = readln()
+
+        ProcessBuilder("clear").inheritIO().start().waitFor()
 
         dataTask.updateList()
     }
