@@ -47,5 +47,27 @@ class TaskViewModel(
         parser.printTasks(dataTask.getAllTasks())
     }
 
+    fun updateTask(){
+    //Imprimimos instrucción
+        print("Digite la ID de la Tarea: ")
+        //Pedimos id de la trea a marcar
+        val id = readln().toIntOrNull() ?: 0
+        //Cargamos la lista actual en una variable la cual vamos a modificar.
+        val newList = dataTask.getAllTasks().toMutableList()
+//Verificamos que alguno de ellos exista. Sino existe vuelve al Menú Principal.
+        if (!newList.any{it.id == id}) {
+            println("Error: La ID digitada no coincide con ninguna Tarea.")
+            print("\nPresione Enter para volver al Menú Principal: ")
+            val n = readln()
+            return
+        }
+//Si existe obtenemos la pos en que se encuentra.
+        val i = newList.indexOfFirst{it.id == id}
+        //Copiamos,editamos y agregamos la tarea actualizada.
+        newList[i] = newList[i].copy(state = true)
+
+        dataTask.updateTask(newList.toList())
+    }
+
 }
     
