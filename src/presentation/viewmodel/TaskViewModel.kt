@@ -62,12 +62,19 @@ class TaskViewModel(
         }
 //Si existe obtenemos la pos en que se encuentra.
         val i = newList.indexOfFirst{it.id == id}
+    //Si la lista ya esta actualizada salir.
+        if (newList[i].state == true){
+            println("La Tarea ya esta completada.")
+            print("\nPresione Enter para volver al Menú Principal: ")
+            val n = readln()
+            return
+        }
         //Copiamos,editamos y agregamos la tarea actualizada.
         newList[i] = newList[i].copy(state = true)
 
         dataTask.updateTask(newList.toList())
 
-        print("\nLa Tarea $i se actualizo con exito! Presione enter para Volver al Menú Principal: ")
+        print("\nLa Tarea $id se actualizo con exito! Presione enter para Volver al Menú Principal: ")
         val n = readln()
 
         dataTask.updateList()
