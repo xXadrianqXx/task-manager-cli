@@ -37,7 +37,12 @@ class TaskViewModel(
         ProcessBuilder("clear").inheritIO().start().waitFor()
         val id = (dataTask.getAllTasks().maxOfOrNull { it.id } ?: 0) + 1
         val newTask = Task(id,title,description,priority,false)
-        dataTask.saveTask(newTask)
+        
+        val newList = dataTask.getAllTasks().toMutableList()
+
+        newList.add(newtask)
+
+        dataTask.updateDB(newList.toList())
 
         dataTask.updateList()
     }
@@ -65,7 +70,7 @@ class TaskViewModel(
         //Copiamos,editamos y agregamos la tarea actualizada.
         newList[i] = newList[i].copy(state = true)
 
-        dataTask.updateTask(newList.toList())
+        dataTask.updateDB(newList.toList())
 
         print("\nLa Tarea $i se actualizo con exito! Presione enter para Volver al Menú Principal: ")
         val n = readln()

@@ -11,17 +11,12 @@ class TaskRepository{
     }
 
 //Usa la funcion save() de Save.kt pero antes pasa por el mapper convirtiendo las clases en string. 
-    fun saveTask(task: Task){
-        save(toStringTask(task))
-    }
-//Usa el principio de una actulización.
-    fun updateTask(listUpdated: List<Task>){
-        deleteFile()
-
-        for (i in listUpdated){
-            save(toStringTask(i), "update")
+    fun updateDB(newList: List<Task>){
+        var tasks: String = ""
+        for (i in newList) {
+            tasks + toStringTask(i) + "\n"
         }
-        
+        println(tasks)
     }
 
     fun getAllTasks(): List<Task> = tasksLoaded
