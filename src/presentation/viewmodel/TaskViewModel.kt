@@ -12,7 +12,7 @@ class TaskViewModel(
     private val input: Input,
     private val parser: ParserPrint
     ) {
-
+    
     //Añadir Tareas
     fun addTask(){
         println("\n-------------Tarea------------")
@@ -51,30 +51,60 @@ class TaskViewModel(
         parser.printTasks(dataTask.getAllTasks())
     }
 
-    fun updateTask(){
+    private fun dialogOfUpdateDB(newList: MutableList<Task>):Int?{
     //Imprimimos instrucción
         print("Digite la ID de la Tarea: ")
         //Pedimos id de la trea a marcar
         val id = readln().toIntOrNull() ?: 0
-        //Cargamos la lista actual en una variable la cual vamos a modificar.
-        val newList = dataTask.getAllTasks().toMutableList()
 //Verificamos que alguno de ellos exista. Sino existe vuelve al Menú Principal.
         if (!newList.any{it.id == id}) {
             println("Error: La ID digitada no coincide con ninguna Tarea.")
             print("\nPresione Enter para volver al Menú Principal: ")
             val n = readln()
-            return
+            return null
         }
+        
 //Si existe obtenemos la pos en que se encuentra.
         val i = newList.indexOfFirst{it.id == id}
+
+        val L = mutableListOf(newList[i])
+        parser.printTasks(L)
+
+        while(true){
+            print("\nEstas seguro de querer realizar cambios?(s/n): ")
+            
+            val answer = readln().uppercase()
+            if (answer== "S" || answer == "SI"){
+                return i
+            }
+            if (answer== "N" || answer == "NO"){
+                return null
+            }
+            
+            println("\nError: Digite s o n según lo requiera.\n")
+        }
+    }
+        
+    fun updateTask(){
+        //Cargamos la lista actual en una variable la cual vamos a modificar.
+        val newList = dataTask.getAllTasks().toMutableList()
+    //Buscamos la lista y la confirmacion para realizar cambios.
+        val i = dialogOfUpdateDB(newList)
+//Si i es null o no se aprobó los cambios o no se encontro la Tarea.
+        if (i == null) {
+            return
+            ProcessBuilder("clear").inheritIO().start().waitFor()
+            
+        }
+        
         //Copiamos,editamos y agregamos la tarea actualizada.
-        newList[i] = newList[i].copy(state = true)
+        newList[i] = newList[i].copy(state = !newList[i].state)
+
 
         dataTask.updateDB(newList.toList())
-
-        print("\nLa Tarea $i se actualizo con exito! Presione enter para Volver al Menú Principal: ")
+        print("\nLa Tarea $i se actualizo con exito! \nPresione enter para Volver al Menú Principal: ")
         val n = readln()
-
+        ProcessBuilder("clear").inheritIO().start().waitFor()
         dataTask.updateList()
     }
 
