@@ -8,7 +8,7 @@ fun save(tasks: String){
     try{
 //Definimos la ruta de guardado (Solo creamos donde se podria guardar, aun ni se crea el archivo)
         val file = File("TareasGuardadas.txt")
-    //Si el archivo no existe se crea y se añade la tarea sin salto de linea
+    //Se reescribe todo el archivo.
         file.writeText(tasks)
         println("Los datos se actualizaron correctamente!\n")
         
