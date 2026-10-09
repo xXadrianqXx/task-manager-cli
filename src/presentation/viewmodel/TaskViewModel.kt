@@ -40,7 +40,7 @@ class TaskViewModel(
         
         val newList = dataTask.getAllTasks().toMutableList()
 
-        newList.add(newtask)
+        newList.add(newTask)
 
         dataTask.updateDB(newList.toList())
 

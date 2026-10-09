@@ -10,6 +10,7 @@ fun save(tasks: String){
         val file = File("TareasGuardadas.txt")
     //Si el archivo no existe se crea y se añade la tarea sin salto de linea
         file.writeText(tasks)
+        println("Los datos se actualizaron correctamente!\n")
         
         } catch(e:IOException){
             //Si es un problema de permisos o algo no da el error exacto.

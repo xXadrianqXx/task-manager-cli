@@ -10,13 +10,23 @@ class TaskRepository{
         tasksLoaded = loadTask()
     }
 
-//Usa la funcion save() de Save.kt pero antes pasa por el mapper convirtiendo las clases en string. 
+//Usa la funcion save() de TaskStorage.kt pero antes metemos toda la lista actualizada en una variable pero no sin antes haberla convertido en String.
     fun updateDB(newList: List<Task>){
         var tasks: String = ""
+        val sizeList = newList.count()
+        var n = 0
+    //Aqui se recorre la lista convitiendo 1 por 1 de las tareas en string.
         for (i in newList) {
-            tasks + toStringTask(i) + "\n"
+            n++
+            tasks += toStringTask(i) 
+        //Aqui se hace que si esta en la ultima tarea ya no salte un espacio
+            if (sizeList > n) {
+                tasks += "\n"
+            }
         }
-        println(tasks)
+
+        save(tasks)
+
     }
 
     fun getAllTasks(): List<Task> = tasksLoaded
