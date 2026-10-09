@@ -94,15 +94,31 @@ class TaskViewModel(
         if (i == null) {
             return
             ProcessBuilder("clear").inheritIO().start().waitFor()
-            
         }
         
         //Copiamos,editamos y agregamos la tarea actualizada.
         newList[i] = newList[i].copy(state = !newList[i].state)
 
-
         dataTask.updateDB(newList.toList())
-        print("\nLa Tarea $i se actualizo con exito! \nPresione enter para Volver al Menú Principal: ")
+        print("\nLa Tarea ${i +1} se actualizo con exito! \nPresione enter para Volver al Menú Principal: ")
+        val n = readln()
+        ProcessBuilder("clear").inheritIO().start().waitFor()
+        dataTask.updateList()
+    }
+
+    fun deleteTask(){
+        val newList = dataTask.getAllTasks().toMutableList()
+        val i = dialogOfUpdateDB(newList)
+        if (i == null) {
+            return
+            ProcessBuilder("clear").inheritIO().start().waitFor()
+        }
+
+        newList.removeAt(i)
+
+        dataTask.updateDB(newList)
+
+        print("\nLa Tarea ${i +1} se elimino con exito! \nPresione enter para Volver al Menú Principal: ")
         val n = readln()
         ProcessBuilder("clear").inheritIO().start().waitFor()
         dataTask.updateList()

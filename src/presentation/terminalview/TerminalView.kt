@@ -31,7 +31,7 @@ class TerminalView(private val viewModel: TaskViewModel){
 
         println("\n")
 
-        val list = mapOf(1 to ::showAddTask,2 to ::listTasks, 3 to ::searchTasks, 4 to ::updateTask, 6 to ::exit)
+        val list = mapOf(1 to ::showAddTask,2 to ::listTasks, 3 to ::searchTasks, 4 to ::updateTask, 5 to ::showDeleteTask, 6 to ::exit)
         currentList = list
 
         return true
@@ -89,6 +89,12 @@ class TerminalView(private val viewModel: TaskViewModel){
         return showMainMenu()
     }
 
+    fun showDeleteTask(): Boolean {
+        viewModel.deleteTask()
+
+        return showMainMenu()
+    }
+    
 //Con esta función cerramos el app.
     fun exit(): Boolean{
         return false
